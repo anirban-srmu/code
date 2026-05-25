@@ -21,9 +21,20 @@ for c in contours:
     area = cv2.contourArea(c)
     if area < 1000:
         continue
+    #draw contour and bounding box (blue and green respectively)
+    cv2.drawContours(img, [c], -1, (255, 0, 0), 2)
     x, y, w, h = cv2.boundingRect(c)
+
     cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
     count += 1
+
+    #center of the shape usig moments (red circle)
+    M = cv2.moments(c)
+    if M["m00"] != 0:
+        cX = int(M["m10"] / M["m00"])
+        cY = int(M["m01"] / M["m00"])
+        #draw a red dot at the center of the shape
+        cv2.circle(img, (cX, cY), 7, (0, 0, 255), -1)
 
 cv2.putText(img, f"Object count: {count}", (25, 450), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2)
 print("Detected objects:", count)
