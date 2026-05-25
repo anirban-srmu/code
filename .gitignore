@@ -1,0 +1,69 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Build and packaging output
+build/
+dist/
+*.egg-info/
+
+# Jupyter notebooks
+.ipynb_checkpoints/
+
+# Environment and local configuration
+.env
+.env.*
+*.local
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+
+# Generated media and recordings
+captures/
+recordings/
+frames/
+output/
+outputs/
+*.avi
+*.mp4
+*.mov
+*.mkv
+
+# ML model weights and generated model exports
+*.pt
+*.pth
+*.onnx
+*.tflite
+*.engine
+*.weights
+
+# Streamlit local state
+.streamlit/secrets.toml
+
+# Arduino build artifacts
+*.hex
+*.elf
+*.bin
