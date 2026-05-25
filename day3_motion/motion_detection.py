@@ -2,7 +2,7 @@
 import time
 import cv2
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 if not cap.isOpened():
     raise RuntimeError("Could not open webcam")
 
@@ -23,6 +23,7 @@ while True:
     motion = False
     for c in contours:
         area = cv2.contourArea(c)
+        #1500 px is for noise filtering, you can adjust it based on your environment and needs
         if area > 1500:
             x, y, w, h = cv2.boundingRect(c)
             cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 255), 2)
@@ -33,9 +34,10 @@ while True:
         last_event_time = time.time()
 
     cv2.imshow("Motion Detection", frame)
+    cv2.imshow("fg", fg)
     cv2.imshow("Motion Mask", mask)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-
+    
 cap.release()
 cv2.destroyAllWindows()
