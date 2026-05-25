@@ -1,0 +1,11 @@
+opencv-python>=4.8
+numpy>=1.24
+matplotlib>=3.7
+mediapipe>=0.10
+ultralytics>=8.0
+paho-mqtt>=1.6
+fastapi>=0.110
+uvicorn>=0.27
+streamlit>=1.30
+requests>=2.31
+Pillow>=10.0
