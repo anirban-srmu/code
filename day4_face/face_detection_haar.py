@@ -6,7 +6,7 @@ face_cascade = cv2.CascadeClassifier(cascade_path)
 if face_cascade.empty():
     raise RuntimeError("Could not load Haar cascade")
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 if not cap.isOpened():
     raise RuntimeError("Could not open webcam")
 
