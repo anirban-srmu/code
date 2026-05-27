@@ -58,7 +58,7 @@ options = FaceLandmarkerOptions(
 # Step 3: Open webcam
 # ---------------------------------------------------------
 
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 
 if not cap.isOpened():
     raise RuntimeError("Could not open webcam")

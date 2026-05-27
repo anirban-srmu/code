@@ -1,0 +1,54 @@
+Image classification:
+----------------------------
+what is the main object in the image?
+--> This image contains a garbage
+--> label
+Object detection:
+-----------------------
+What objects are present?
+Where are they present?
+--> bio degradable garbage present in (x,y) location
+--> object class, confidence score, bounding box
+Segmentation
+--------------------
+--> marks the exact pixel area of the object.
+
+
+What is YOLO?
+You Only Look Once
+
+step 1 : Input Preprocessing
+
+webcam frame--> model expected format
+resizing
+padding/letterboxing
+normalization
+converstion to tensor--> What is a tensor?
+
+step 2: Neural Network Forward pass
+visual feature extraction
+pattern learning for 
+edges, textures, shapes,object parts, full object structures
+
+step 3: Prediction
+bounding box, class probability, confidence score
+
+step 4: Confidence filtering
+
+step 5: Non-Maximum Suppression(NMS)
+removes duplicate boxes and keeps the best one.
+step 6: Final Result
+
+Task:
+1. Change Confidence Threshold
+2. Display FPS (Hint: fps= 1/ (current_time - prev_time)
+3. Count Detected Objects(Hint: len of results[0].boxes)
+4. Detect Only Person(Hint: model function use classes=[0] as one of the attributes)
+COCO-trained YOLO model--class 0 is usually person.
+5. Save Frame when Object is detected.
+
+
+
+
+
+
