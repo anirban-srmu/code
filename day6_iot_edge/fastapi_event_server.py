@@ -4,12 +4,22 @@ Run: uvicorn fastapi_event_server:app --reload --host 0.0.0.0 --port 8000
 from datetime import datetime
 from typing import List, Dict, Any
 from fastapi import FastAPI
-from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware  
+from pydantic import BaseModel,ConfigDict
 
 app = FastAPI(title="AI Vision Event Server")
 events: List[Dict[str, Any]] = []
 
+app.add_middleware(
+   CORSMiddleware,
+   allow_origins=["*"],
+   allow_credentials=True,
+   allow_methods=["*"],
+   allow_headers=["*"],
+)
+
 class VisionEvent(BaseModel):
+    model_config = ConfigDict(extra="allow")
     camera_id: str
     event_type: str
     label: str

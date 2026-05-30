@@ -1,7 +1,9 @@
 """Day 6 demo: minimal dashboard for vision events.
 Run: streamlit run streamlit_dashboard.py
 """
+import time
 import requests
+import pandas as pd
 import streamlit as st
 
 API = "http://localhost:8000/events"
